@@ -65,7 +65,7 @@ class War {
     let attackedSaxon = this.saxonArmy[randomSaxonI]
 
     if (attackedSaxon.health-attackingViking.strength <= 0) this.saxonArmy.splice(randomSaxonI,1)
-    return attackedSaxon.receiveDamage(attackingViking.strength)
+    return attackedSaxon.receiveDamage(attackingViking.attack())
   }
 
   saxonAttack(){
@@ -74,7 +74,7 @@ class War {
     let attackedViking = this.vikingArmy[randomVikingI]
 
     if (attackedViking.health-attackingSaxon.strength <= 0) this.vikingArmy.splice(randomVikingI,1)
-    return attackedViking.receiveDamage(attackingSaxon.strength)
+    return attackedViking.receiveDamage(attackingSaxon.attack())
   }
 
   showStatus(){
